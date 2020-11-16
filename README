@@ -27,10 +27,9 @@ API calls to represent the example given in the pdf (These should be ran from yo
         or through the swagger menu [http://127.0.0.1:8000/docs])
 
     http://127.0.0.1:8000/points/add/user/DANNON/300?date=10%2F31%2010AM
-    http://127.0.0.1:8000/points/add/user/DANNON/300?date=10%2f31%2010AM
     http://127.0.0.1:8000/points/add/user/UNILEVER/200?date=10%2f31%2011AM
     http://127.0.0.1:8000/points/add/user/DANNON/-200?date=10%2f31%203PM
-    http://127.0.0.1:8000/points/add/user/MILLER%20COORS/300?date=11%2f1%202PM
+    http://127.0.0.1:8000/points/add/user/MILLER%20COORS/10000?date=11%2f1%202PM
     http://127.0.0.1:8000/points/add/user/DANNON/1000?date=11%2f2%202PM
 
 - Deduct Points (This is a patch method you should run them from your Rest API Client,
