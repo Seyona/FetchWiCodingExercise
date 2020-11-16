@@ -40,8 +40,11 @@ class User(BaseModel):
         return deduct_dict
 
     "Gets the total number of points in the transactions list"
-    def get_points_total(self):
-        return 0 if not self.transactions else sum([x.points.points for x in self.transactions])
+    def get_points_total(self, payer_name = ""):
+        if payer_name == "":
+            return 0 if not self.transactions else sum([x.points.points for x in self.transactions])
+        else:
+            return 0 if not self.transactions else sum(x.points.points for x in self.transactions if x.payer_name == payer_name)
 
     """
        Adds transaction for the user
