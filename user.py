@@ -69,12 +69,16 @@ class User(BaseModel):
                 return "Attempting to deduct more points than the user has"
             while tempPoints > 0:
                 for i in range(0, len(self.transactions)):
-                    value = self.transactions[i].points.points - tempPoints
-                    if tempPoints < 0:
-                        tempPoints = abs(tempPoints)
-                        self.transactions[i].points.points = 0
+                    if self.transactions[i].payer_name != payer_name:
+                        continue
                     else:
-                        self.transactions[i].points.points = value
+                        if tempPoints >= self.transactions[i].points.points:
+                            diff = tempPoints - self.transactions[i].points.points
+                            tempPoints -= diff  # if they are the same this becomes 0
+                            self.transactions[i].points.points = 0
+                        else:
+                            self.transactions[i].points.points -= tempPoints
+                            tempPoints = 0
 
             # Remove all nonzero / negative values from the points list
             self.transactions = [transaction for transaction in self.transactions if transaction.points.points > 0]
