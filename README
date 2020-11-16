@@ -24,7 +24,7 @@ You can create additional users with http://127.0.0.1:8000//user/createUser/user
 
 API calls to represent the example given in the pdf (These should be ran from your web browser or REST API client of your choice)
 
-- Add points (These are post methods you should run them from your Rest API Client,
+- Add points (These are put methods you should run them from your Rest API Client,
         or through the swagger menu [http://127.0.0.1:8000/docs])
 
     http://127.0.0.1:8000/points/add/user/DANNON/300?date=10%2F31%2010AM
@@ -34,7 +34,7 @@ API calls to represent the example given in the pdf (These should be ran from yo
     http://127.0.0.1:8000/points/add/user/MILLER%20COORS/300?date=11%2f1%202PM
     http://127.0.0.1:8000/points/add/user/DANNON/1000?date=11%2f2%202PM
 
-- Deduct Points (This is a put method you should run them from your Rest API Client,
+- Deduct Points (This is a patch method you should run them from your Rest API Client,
         or through the swagger menu [http://127.0.0.1:8000/docs])
 
     http://127.0.0.1:8000/points/deduct/user/5000
