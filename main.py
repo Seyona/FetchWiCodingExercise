@@ -1,8 +1,8 @@
 from fastapi import FastAPI
+import uvicorn
 from user import User
 
 app = FastAPI()
-
 
 # Create a dummy user for the mock api calls
 userId = 0
@@ -87,3 +87,6 @@ def deduct_points(user_name: str, points: int):
         value = deducted[key]
         values.append(f'[{key}, {value} points, now]')
     return ','.join(values)
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=8000)
