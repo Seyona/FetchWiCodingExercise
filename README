@@ -2,8 +2,7 @@ To run this you'll need to have have the following python libraries installed
     - FastAPI (pip install FastAPI) if that doesn't work : py -m pip install FastAPI
     - uvicorn (pip install uvicorn) if that doesn't work : py -m pip install uvicorn
 
-To run the webserver: uvicorn main:app --reload
-    - You may need to use "py -m uvicorn main:app --reload"
+To run this just run the following command at the command lind: py main.py
 
 
 Once everything is running you should connect and run all api queries through 127.0.0.1:8000/
