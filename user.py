@@ -64,7 +64,7 @@ class User(BaseModel):
         else:
             self.allTransactions.append(transaction)
             tempPoints = abs(points)
-            totalPoints = self.get_points_total()
+            totalPoints = self.get_points_total(payer_name)
             if tempPoints > totalPoints:  # Based on the examples we shouldn't hit this, but this is good to check so it doesn't fly into an infinite loop
                 return "Attempting to deduct more points than the user has"
             while tempPoints > 0:
