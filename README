@@ -1,0 +1,39 @@
+To run this you'll need to have have the following python libraries installed
+    - FastAPI (pip install FastAPI) if that doesn't work : py -m pip install FastAPI
+    - uvicorn (pip install uvicorn) if that doesn't work : py -m pip install uvicorn
+
+To run the webserver: uvicorn main:app --reload
+    - You may need to use "py -m uvicorn main:app --reload"
+
+
+Once everything is running you should connect and run all api queries through 127.0.0.1:8000/
+    - Adding points example : http://127.0.0.1:8000/points/add/user/DANNON/200?date=10%2f31%2010AM
+
+Alternatively,
+    - Navigate to http://127.0.0.1:8000/docs
+    - Click on the api call that you are interested in running
+        - click "Try it out" in the top right
+        - Enter the desired information and hit "execute"
+           - This is a little easier because you can type the date string without the %2f for '/' and %20 for spaces
+
+
+
+You can create additional users with http://127.0.0.1:8000//user/createUser/user_name , but users that are created are cleared when ever the webservice reboots
+
+
+
+API calls to represent the example given in the pdf (These should be ran from your web browser or REST API client of your choice)
+
+- Add points (These are post methods you should run them from your Rest API Client, or through the swagger menu [http://127.0.0.1:8000/docs])
+    http://127.0.0.1:8000/points/add/user/DANNON/300?date=10%2F31%2010AM
+    http://127.0.0.1:8000/points/add/user/DANNON/300?date=10%2f31%2010AM
+    http://127.0.0.1:8000/points/add/user/UNILEVER/200?date=10%2f31%2011AM
+    http://127.0.0.1:8000/points/add/user/DANNON/-200?date=10%2f31%203PM
+    http://127.0.0.1:8000/points/add/user/MILLER%20COORS/300?date=11%2f1%202PM
+    http://127.0.0.1:8000/points/add/user/DANNON/1000?date=11%2f2%202PM
+
+- Deduct Points (This is a put method you should run them from your Rest API Client, or through the swagger menu [http://127.0.0.1:8000/docs])
+    http://127.0.0.1:8000/points/deduct/user/5000
+
+- Check Balance (This is a get method you can run it from your browser, rest api client, or the swagger menu)
+    http://127.0.0.1:8000/points/balance/user
