@@ -56,7 +56,7 @@ Adds points for the passed user for the specified payer.
 
 Returns a message that displays the success or failure of the api
 """
-@app.post("/points/add/{user_name}/{payer_name}/{points}")
+@app.put("/points/add/{user_name}/{payer_name}/{points}")
 def add_points(user_name: str, payer_name: str, points: int, date: str):
     user = users.get(user_name, None)
     if user is not None:
@@ -77,7 +77,7 @@ Deducts points from the specified user's point total
 
 Returns a list of payers and how many points were deducted from each
 """
-@app.post("/points/deduct/{user_name}/{points}")
+@app.patch("/points/deduct/{user_name}/{points}")
 def deduct_points(user_name: str, points: int):
     user = users.get(user_name, None)
 
