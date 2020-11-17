@@ -3,6 +3,8 @@ To run this you'll need to have the following python libraries installed
 - uvicorn (pip install uvicorn) if that doesn't work : py -m pip install uvicorn
 
 To run this just run the following command at the command line: py main.py
+    - You should see a few messages pop up in your terminal window with the final message looking something like this
+        **  ... Uvicorn running on ←[1mhttp://127.0.0.1:8000←[0m (Press CTRL+C to quit)
 
 
 Once everything is running you should connect and run all api queries through 127.0.0.1:8000/
@@ -17,7 +19,7 @@ Alternatively,
 
 
 You can create additional users with http://127.0.0.1:8000//user/createUser/user_name , but users that are created are cleared when ever the webservice reboots
- 
+
 
 API calls to represent the example given in the pdf (These should be ran from your web browser or REST API client of your choice)
 
