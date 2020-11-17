@@ -15,6 +15,10 @@ users = {data['name']: User(**data)}
 def read_root():
     return {"message": "Fetch WI: Coding Exercise - Backend"}
 
+
+"""
+    Creates a user with a name passed by the user
+"""
 @app.get("/user/createUser/{user_name}")
 def create_user(user_name: str):
     user_name = str.lower(user_name)
