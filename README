@@ -17,9 +17,31 @@ Alternatively,
 - Enter the desired information and hit "execute"
 - This is a little easier because you can type the date string without the %2f for '/' and %20 for spaces
 
+=====================================================
 
-You can create additional users with http://127.0.0.1:8000//user/createUser/user_name , but users that are created are cleared when ever the webservice reboots
+Quick API Overview:
+    - /user/createUser/{user_name}
+        * Replace {user_name} with the user that you want to create
+    - /points/balance/{user_name}
+        * Replace {user_name} with the user that you want to check the balance for
+    - /points/add/{user_name}/{payer_name}/{points}?date=
+        * replace {user name} with the user you are adding point to
+        * replace {payer_name} with the payer you are adding points for
+        * replace {points} with an integer value representing the points you want to add
+        * add a date after date= to specify the date the points were added
+            ** Date should be in format m%2fd%20hAM/PM  IE: 11%2f15%2010AM represents 11/15 10AM
+    - /points/deduct/{user_name}/{points}
+        * replace {user_name} with the user that you want to deduct points from
+        * replace {points} with a positive integer value representing the points you want to deduct
 
+=====================================================
+
+
+WARNING: If you restart the web service all data will be lost. You will need to rerun the api in the same order again
+if you want to replicate the scenario that you had before the restart.
+
+
+=====================================================
 
 API calls to represent the example given in the pdf (These should be ran from your web browser or REST API client of your choice)
 
@@ -39,3 +61,5 @@ http://127.0.0.1:8000/points/deduct/user/5000
 
 - Check Balance (This is a get method you can run it from your browser, rest api client, or the swagger menu)
 http://127.0.0.1:8000/points/balance/user
+
+=====================================================
