@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from datetime import datetime
 import uvicorn
 from user import User
 
@@ -91,7 +92,7 @@ def deduct_points(user_name: str, points: int):
     values = []
     for key in sorted(deducted.keys()):
         value = deducted[key]
-        values.append(f'[{key}, {value} points, now]')
+        values.append(f'[{key}, {value} points, {datetime.now().strftime("%m/%d %I%p")}]')
     return ','.join(values)
 
 if __name__ == "__main__":
