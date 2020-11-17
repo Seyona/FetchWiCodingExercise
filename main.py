@@ -41,7 +41,7 @@ def get_balance(user_name: str):
 
     sumByPayer = user.sum_transactions_by_payer()
     values = []
-    for key in sumByPayer:
+    for key in sorted(sumByPayer.keys()):
         value = sumByPayer[key]
         values.append(f'[{key}, {value} points]')
 
@@ -89,7 +89,7 @@ def deduct_points(user_name: str, points: int):
 
     deducted = user.deduct_points_from_payers(points)
     values = []
-    for key in deducted:
+    for key in sorted(deducted.keys()):
         value = deducted[key]
         values.append(f'[{key}, {value} points, now]')
     return ','.join(values)
