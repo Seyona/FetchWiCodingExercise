@@ -15,7 +15,7 @@ users = {data['name']: User(**data)}
 def read_root():
     return {"message": "Fetch WI: Coding Exercise - Backend"}
 
-@app.get("/user/createUser/user_name")
+@app.get("/user/createUser/{user_name}")
 def create_user(user_name: str):
     user_name = str.lower(user_name)
     global userId
