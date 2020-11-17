@@ -6,7 +6,7 @@ app = FastAPI()
 
 # Create a dummy user for the mock api calls
 userId = 0
-data = {'id': userId, 'name': "user", 'transactions': [], 'allTransactions': []}
+data = {'id': userId, 'name': "user", 'transactions': [], 'allTransactions': [], 'allPayers': []}
 users = {data['name']: User(**data)}
 
 
@@ -18,7 +18,7 @@ def read_root():
 def create_user(user_name: str):
     global userId
     userId += 1
-    userData = {'id': userId, 'name': user_name, 'transactions': [], 'allTransactions': []}
+    userData = {'id': userId, 'name': user_name, 'transactions': [], 'allTransactions': [], 'allPayers': []}
     newUser = users.get(userData['name'], None)
     if newUser is not None:
         return "Requested user already exists"
