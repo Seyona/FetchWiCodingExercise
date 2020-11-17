@@ -2,7 +2,7 @@ To run this you'll need to have the following python libraries installed
 - FastAPI (pip install FastAPI) if that doesn't work : py -m pip install FastAPI
 - uvicorn (pip install uvicorn) if that doesn't work : py -m pip install uvicorn
 
-To run this just run the following command at the command line: py main.py
+To run the web service, execute the following command at the command line: py main.py
     - You should see a few messages pop up in your terminal window with the final message looking something like this
         **  ... Uvicorn running on ←[1mhttp://127.0.0.1:8000←[0m (Press CTRL+C to quit)
 
