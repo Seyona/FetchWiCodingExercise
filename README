@@ -15,7 +15,7 @@ Alternatively,
 - Click on the api call that you are interested in running
 - click "Try it out" in the top right
 - Enter the desired information and hit "execute"
-- This is a little easier because you can type the date string without the %2f for '/' and %20 for spaces
+- This is a little easier because you can put the plaintext in the inputs (no need for %2f for '/' and %20 for spaces)
 
 =====================================================
 
