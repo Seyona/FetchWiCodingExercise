@@ -85,6 +85,9 @@ Returns a list of payers and how many points were deducted from each
 """
 @app.patch("/points/deduct/{user_name}/{points}")
 def deduct_points(user_name: str, points: int):
+    if points <= 0:
+        return "Positive values for points is expected. No points were deducted"
+
     user_name = str.lower(user_name)
     user = users.get(user_name, None)
 
