@@ -16,6 +16,7 @@ def read_root():
 
 @app.get("/user/createUser/user_name")
 def create_user(user_name: str):
+    user_name = str.lower(user_name)
     global userId
     userId += 1
     userData = {'id': userId, 'name': user_name, 'transactions': [], 'allTransactions': [], 'allPayers': []}
@@ -32,6 +33,7 @@ Gets the point balance by payer for the specified user
 """
 @app.get("/points/balance/{user_name}")
 def get_balance(user_name: str):
+    user_name = str.lower(user_name)
     user = users.get(user_name, None)
 
     if user is None:
@@ -58,6 +60,9 @@ Returns a message that displays the success or failure of the api
 """
 @app.put("/points/add/{user_name}/{payer_name}/{points}")
 def add_points(user_name: str, payer_name: str, points: int, date: str):
+    user_name = str.lower(user_name)
+    payer_name = str.upper(payer_name)
+
     user = users.get(user_name, None)
     if user is not None:
 
@@ -79,6 +84,7 @@ Returns a list of payers and how many points were deducted from each
 """
 @app.patch("/points/deduct/{user_name}/{points}")
 def deduct_points(user_name: str, points: int):
+    user_name = str.lower(user_name)
     user = users.get(user_name, None)
 
     deducted = user.deduct_points_from_payers(points)
